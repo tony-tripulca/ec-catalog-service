@@ -31,6 +31,7 @@ export default {
     let validation = Validator.check([
       Validator.required(req.body, "name"),
       Validator.required(req.body, "description"),
+      Validator.required(req.body, "amount"),
     ]);
 
     if (!validation.pass) {
@@ -92,6 +93,7 @@ export default {
       Validator.required(req.params, "catalog_uid"),
       Validator.required(req.body, "name"),
       Validator.required(req.body, "description"),
+      Validator.required(req.body, "amount"),
     ]);
 
     if (!validation.pass) {
@@ -102,6 +104,7 @@ export default {
     MongodbService.update("catalogs", req.params.catalog_uid, {
       name: req.body.name,
       description: req.body.description,
+      amount: req.body.amount,
     })
       .then((response) => {
         let msg = { msg: `${req.method} ${req.originalUrl} ${res.statusCode}` };
