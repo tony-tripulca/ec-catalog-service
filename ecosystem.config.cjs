@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "CatalogServer.1.1",
+      name: "CatalogService.1.1",
       namespace: "ec-catalog-service",
       script: "./src/index.js",
       watch: ["./src", "./src/*.js"],
