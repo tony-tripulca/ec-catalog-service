@@ -42,6 +42,7 @@ export default {
     MongodbService.insert("catalogs", {
       name: req.body.name,
       description: req.body.description,
+      amount: req.body.amount,
     })
       .then((response) => {
         let msg = { msg: `${req.method} ${req.originalUrl} ${res.statusCode}` };
